@@ -8,4 +8,4 @@ Projeto desenvolvido durante o curso da UDACITY para construir um aplicativo de 
 
 # Proposta
 
-<img align="center" alt="GIF" src="https://github.com/rdeconti/Projeto-UDACITY-Android-Java-Aplicativo-Filmes-Famosos-2/blob/main/findMovie2.png" />
+<img align="center" alt="GIF" src="https://github.com/rdeconti/Projeto-UDACITY-Android-Java-Aplicativo-Culinaria/blob/main/bakehouse.png" />
