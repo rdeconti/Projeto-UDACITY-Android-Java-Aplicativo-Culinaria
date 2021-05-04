@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rosemeire.deconti.bakehouse">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_bakehouse_icon"
+        android:roundIcon="@drawable/ic_bakehouse_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- ..................................................................... Splash Screen -->
+        <activity android:name="com.rosemeire.deconti.bakehouse.userInterface.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ............................................................................ ?????? -->
+        <activity android:name="com.rosemeire.deconti.bakehouse.userInterface.RecipesListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop">
+        </activity>
+
+        <!-- ........................................................................... Recipes -->
+        <activity android:name="com.rosemeire.deconti.bakehouse.userInterface.RecipesActivity"
+            android:parentActivityName="com.rosemeire.deconti.bakehouse.userInterface.RecipesListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rosemeire.deconti.bakehouse.userInterface.RecipesListActivity" />
+        </activity>
+
+        <!-- ............................................................................. Steps -->
+        <activity android:name="com.rosemeire.deconti.bakehouse.userInterface.StepsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="com.rosemeire.deconti.bakehouse.userInterface.RecipesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rosemeire.deconti.bakehouse.userInterface.RecipesActivity"/>
+        </activity>
+
+        <!-- ................................................................ Preferred Settings -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".userInterface.RecipesListActivity" />
+
+        <!-- ............................................................................ Widget -->
+        <receiver android:name="com.rosemeire.deconti.bakehouse.userInterface.WidgetRecipes">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/recipes_widget_provider_info" />
+        </receiver>
+
+        <service android:name="com.rosemeire.deconti.bakehouse.userInterface.WidgetListFactoryService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+    </application>
+
+</manifest>

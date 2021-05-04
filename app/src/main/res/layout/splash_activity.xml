@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor"
+    tools:ignore="Overdraw">
+
+    <ImageView
+        android:id="@+id/imageView_splash"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margins"
+        android:layout_marginStart="@dimen/margins"
+        android:layout_marginEnd="@dimen/margins"
+        android:background="@color/backgroundColor"
+        android:contentDescription="@string/content_description_01"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/textView_splash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_bakehouse1" />
+
+    <TextView
+        android:id="@+id/textView_splash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margins"
+        android:background="@color/backgroundColor"
+        android:fontFamily="sans_serif_regular"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/titleColor"
+        android:textSize="@dimen/TextSize_40sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_splash" />
+
+</android.support.constraint.ConstraintLayout>

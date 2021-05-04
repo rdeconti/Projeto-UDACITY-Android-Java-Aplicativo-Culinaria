@@ -1,0 +1,70 @@
+<resources>
+
+    <!-- TODO RUBRIC POINT: RECOMMENDATION FROM LAST PROJECT REVIEW: USE THEMES AND STYLES -->
+
+    <!-- ............................................................. App Theme With Action bar -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+    </style>
+
+    <!-- .......................................................... App Theme Without Action bar -->
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- ............................................................... App Theme AppBarOverlay -->
+    <style name="AppTheme.AppBarOverlay" parent="AppTheme">
+    </style>
+
+    <!-- ................................................................ App Theme PopupOverlay -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    </style>
+
+    <style name="Theme.MyActionBarTabText" parent="Widget.AppCompat.ActionBar.TabView">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/TextSize_22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans_serif_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <!-- ............................................................................. Text view -->
+    <style name="TextViewTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margins</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/contentsColor</item>
+        <item name="android:textSize">@dimen/TextSize_22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margins</item>
+        <item name="android:textColor">@color/contentsColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/TextSize_22sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextViewQuantities">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/contentsColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/TextSize_22sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>

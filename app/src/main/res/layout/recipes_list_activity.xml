@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rosemeire.deconti.bakehouse.userInterface.RecipesListActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout_recipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:id="@+id/imageView_main"
+                app:srcCompat="@drawable/ic_bakehouse_wifi_off"
+                android:contentDescription="@string/content_description_02"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_main"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:progressDrawable="@drawable/custom_progress_bar"
+                android:progressTint="@color/colorAccent"
+                tools:targetApi="lollipop" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_main"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@layout/recipes_list_item"
+                android:padding="@dimen/margins"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

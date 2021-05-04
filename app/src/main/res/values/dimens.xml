@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TODO RUBRIC POINT: RECOMMENDATION FROM LAST PROJECT REVIEW: USE DIMENS -->
+
+    <dimen name="margins">8dp</dimen>
+    <dimen name="TextSize_22sp">22sp</dimen>
+    <dimen name="TextSize_40sp">40sp</dimen>
+
+</resources>

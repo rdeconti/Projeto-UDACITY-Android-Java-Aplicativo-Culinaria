@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- .............................................................................. App data -->
+    <string name="app_name">Bake House</string>
+
+    <!-- ................................................................................ Labels -->
+    <string name="label_previous">Previous</string>
+    <string name="label_next">Next</string>
+    <string name="label_recipe_ingredients_steps">Recipe ingredients and steps</string>
+    <string name="label_recipe_list">Recipe list</string>
+    <string name="label_quantity">Quantity</string>
+    <string name="label_measure">Measure</string>
+    <string name="label_recipe">Recipe</string>
+    <string name="label_servings">Servings</string>
+    <string name="label_steps">Steps</string>
+    <string name="label_ingredients">Ingredients</string>
+    <string name="label_value">100</string>
+    <string name="label_description">Recipe Introduction</string>
+    <string name="label_id">0</string>
+    <string name="label_step">1. Mix two cups of water with 3 cups of sugar</string>
+    <string name="label_step_list">STEPS_LIST</string>
+
+    <!-- ........................................................................ Users Messages -->
+    <string name="msg_widget_error">Error to add widget recipe !</string>
+    <string name="msg_widget_success">Recipe added to your widget !</string>
+    <string name="msg_network_fail">There is no network connection, try again later.</string>
+    <string name="msg_connection_retry">RETRY</string>
+    <string name="msg_widget">Click to view all recipes</string>
+
+    <!-- .................................................................... Technical Messages -->
+    <string name="msg_problems_viewModelClass" translatable="false">Unknown ViewModel class:</string>
+
+    <!-- .................................................................. Content Descriptions -->
+    <string name="content_description_01">BakeHouse Logo</string>
+    <string name="content_description_02">Message error</string>
+    <string name="content_description_04">Image of recipe</string>
+    <string name="content_description_05">Widget Icon</string>
+    <string name="content_description_06">WiFi Icon</string>
+    <string name="content_description_07">Application Icon</string>
+
+    <!-- ............................................................. modelRecipe Activity Tabs -->
+    <string-array name="recipe_table_titles">
+        <item>INGREDIENTS</item>
+        <item>STEPS</item>
+    </string-array>
+
+    <!-- ............................................................................. bool data -->
+    <bool name="isRunningOnTablet">false</bool>
+
+</resources>
+
+

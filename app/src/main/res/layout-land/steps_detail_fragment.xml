@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.rosemeire.deconti.bakehouse.userInterface.StepsDetailFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.rosemeire.deconti.bakehouse.viewModel.StepsViewModel"/>
+        <variable
+            name="eventHandler"
+            type="java.lang.ref.WeakReference&lt;com.rosemeire.deconti.bakehouse.viewModel.StepsViewModel.StepsEventHandler&gt;" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout_stepsDetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/exoplayer_stepsDetailFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margins"
+            android:visibility="@{viewModel.hasVideo ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@+id/imageView_stepsDetailFragmentThumbs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:resize_mode="fill"
+            app:videoUrl="@{viewModel.currentStep.videoURL}" />
+
+        <ImageView
+            android:id="@+id/imageView_stepsDetailFragmentThumbs"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margins"
+            android:layout_marginEnd="@dimen/margins"
+            android:layout_marginStart="@dimen/margins"
+            android:layout_marginTop="@dimen/margins"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDescription"
+            app:layout_constraintEnd_toEndOf="@+id/exoplayer_stepsDetailFragment"
+            app:layout_constraintStart_toStartOf="@+id/exoplayer_stepsDetailFragment"
+            app:layout_constraintTop_toBottomOf="@+id/exoplayer_stepsDetailFragment"
+            app:srcCompat="@drawable/ic_bakehouse_icon"
+            app:thumbnailUrl="@{viewModel.currentStep.thumbnailURL}"
+            android:contentDescription="@string/content_description_07" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_marginBottom="@dimen/margins"
+            android:layout_marginTop="@dimen/margins"
+            android:text="@={viewModel.currentStep.description}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout_stepsDetailFragmentNavigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exoplayer_stepsDetailFragment"
+            tools:text="@string/label_step"
+            android:layout_marginStart="@dimen/margins"
+            android:layout_marginEnd="@dimen/margins"
+            android:fontFamily="sans_serif_regular"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/textColorPrimary" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout_stepsDetailFragmentNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/margins"
+            android:layout_marginStart="@dimen/margins"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/button_stepsDetailFragmentPrevious"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_bakehouse_button_back_white_24dp"
+                android:enabled="@{viewModel.prevStepEnable}"
+                android:onClick="@{() -> eventHandler.get().previousPositionClick()}"
+                android:text="@string/label_previous"
+                android:visibility="@{viewModel.prevStepEnable ? View.VISIBLE : View.INVISIBLE}"
+                tools:ignore="ButtonStyle"
+                android:drawableLeft="@drawable/ic_bakehouse_button_back_white_24dp" />
+
+            <Button
+                android:id="@+id/button_stepsDetailFragmentNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableEnd="@drawable/ic_bakehouse_button_forward_white_24dp"
+                android:enabled="@{viewModel.nextStepEnable}"
+                android:onClick="@{() -> eventHandler.get().nextPositionClick()}"
+                android:text="@string/label_next"
+                android:visibility="@{viewModel.nextStepEnable ? View.VISIBLE : View.INVISIBLE}"
+                tools:ignore="ButtonStyle"
+                android:drawableRight="@drawable/ic_bakehouse_button_forward_white_24dp" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

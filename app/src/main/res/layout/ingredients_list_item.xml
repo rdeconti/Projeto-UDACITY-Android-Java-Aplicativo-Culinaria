@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rosemeire.deconti.bakehouse.viewModel.IngredientsViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout_ingredients"
+        android:background="@color/backgroundItemColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margins"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView_ingredient"
+            style="@style/TextViewContent"
+            android:layout_margin="@dimen/margins"
+            android:text="@={viewModel.ingredients.ingredient}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nutella or other chocolate-hazelnut spread" />
+
+        <TextView
+            android:id="@+id/textView_measure"
+            style="@style/TextViewQuantities"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@={viewModel.ingredients.measure}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_quantity"
+            app:layout_constraintTop_toBottomOf="@+id/textView_ingredient"
+            tools:text="@string/label_measure" />
+
+        <TextView
+            android:id="@+id/textView_quantity"
+            style="@style/TextViewQuantities"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{viewModel.quantityValue}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView_measure"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_ingredient"
+            tools:text="@string/label_quantity" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

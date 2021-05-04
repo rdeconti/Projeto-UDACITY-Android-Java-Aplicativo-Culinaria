@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--............................................................... The color of the app bar -->
+    <color name="colorPrimary">#1900ff</color>
+
+    <!--.................................... The color of the status bar and contextual app bars -->
+    <color name="colorPrimaryDark">#1900ff</color>
+
+    <!--............................................................... The color of UI controls -->
+    <color name="colorAccent">#ffffff</color>
+
+    <!--.................................................... The color of UI text in the app bar -->
+    <color name="textColorPrimary">@color/colorAccent</color>
+
+   <!--........................................................ The color of the navigation bar -->
+
+    <!--..................................................................... Custom: background -->
+    <color name="backgroundColor">@color/colorPrimary</color>
+
+    <!--........................................................... Custom: background list items-->
+    <color name="backgroundItemColor">@color/colorAccent</color>
+
+    <!--.......................................................................... Custom: title -->
+    <color name="titleColor">@color/colorAccent</color>
+
+    <!--....................................................................... Custom: contents -->
+    <color name="contentsColor">@color/colorPrimary</color>
+
+</resources>
